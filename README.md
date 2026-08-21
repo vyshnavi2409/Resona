@@ -1,5 +1,7 @@
 # 🤖 Resona - Multi-Document RAG Chatbot
 
+🚀 **Live Demo:** [https://resona-frontend.onrender.com](https://resona-frontend.onrender.com)
+
 A production-quality, multi-document Retrieval-Augmented Generation (RAG) system built with FastAPI, Streamlit, LangChain, and ChromaDB.
 
 ## 🌟 Features
