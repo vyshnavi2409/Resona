@@ -16,7 +16,7 @@ def get_llm():
     """
     api_key = os.getenv("GROQ_API_KEY", "")
     return ChatOpenAI(
-        model="llama3-8b-8192", # Groq's stable Llama 3 8B model
+        model="groq/compound-mini", # Groq's current available chat model
         openai_api_key=api_key,
         openai_api_base="https://api.groq.com/openai/v1",
         temperature=0.3
