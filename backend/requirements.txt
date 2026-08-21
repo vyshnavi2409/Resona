@@ -4,7 +4,7 @@ langchain
 langchain-core
 langchain-community
 langchain-openai
-langchain-huggingface
+langchain-google-genai
 langchain-chroma
 langchain-text-splitters
 chromadb
@@ -14,7 +14,6 @@ python-dotenv
 python-multipart
 pytest
 httpx
-sentence-transformers
 tavily-python
 passlib
 bcrypt==3.2.2

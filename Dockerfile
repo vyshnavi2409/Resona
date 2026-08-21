@@ -14,8 +14,7 @@ RUN pip install uv
 COPY backend/requirements.txt backend_reqs.txt
 COPY frontend/requirements.txt frontend_reqs.txt
 
-# Install PyTorch CPU and all dependencies
-RUN uv pip install --system torch --index-url https://download.pytorch.org/whl/cpu
+# Install dependencies
 RUN uv pip install --system --no-cache -r backend_reqs.txt -r frontend_reqs.txt
 
 # Copy all source code

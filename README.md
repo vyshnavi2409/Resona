@@ -1,13 +1,13 @@
 # 🤖 Resona - Multi-Document RAG Chatbot
 
-🚀 **Live Demo:** [https://resona-frontend.onrender.com](https://resona-frontend.onrender.com)
+🚀 **Live Demo:** [https://resona-nklu.onrender.com](https://resona-nklu.onrender.com/)
 
 A production-quality, multi-document Retrieval-Augmented Generation (RAG) system built with FastAPI, Streamlit, LangChain, and ChromaDB.
 
 ## 🌟 Features
 - **Multi-Format Support:** Ingest PDF, DOCX, CSV, and TXT files.
 - **Smart Chunking:** Employs `RecursiveCharacterTextSplitter` to preserve semantic context.
-- **Local Embeddings:** Uses free HuggingFace embeddings (`all-MiniLM-L6-v2`) to save costs.
+- **Google Embeddings:** Uses Google Gemini Embeddings for lightweight and fast vector generation.
 - **Conversational Memory:** History-aware retriever maintains context across chat interactions.
 - **Scalable Architecture:** Decoupled FastAPI backend and Streamlit frontend.
 - **Docker Ready:** Fully containerized for easy deployment.
@@ -32,7 +32,7 @@ graph TD
     end
     
     subgraph Storage [Storage & Embedding]
-        Embed[Embedding Model<br/>HuggingFace]
+        Embed[Embedding Model<br/>Google Gemini]
         VectorDB[(ChromaDB)]
     end
     

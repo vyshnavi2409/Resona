@@ -2,7 +2,7 @@ import os
 from typing import List
 from langchain_core.documents import Document
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 # Define the persistence directory for ChromaDB
 CHROMA_DB_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "chroma_db")
@@ -12,12 +12,11 @@ _embeddings_instance = None
 
 def get_embeddings_model():
     """
-    Returns the embedding model. Defaulting to a free local HuggingFace model.
+    Returns the embedding model. Defaulting to Google Generative AI Embeddings.
     """
     global _embeddings_instance
     if _embeddings_instance is None:
-        # all-MiniLM-L6-v2 is a good balance between performance and speed
-        _embeddings_instance = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        _embeddings_instance = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     return _embeddings_instance
 
 def get_vector_store() -> Chroma:

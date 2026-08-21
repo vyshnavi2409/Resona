@@ -3,7 +3,7 @@ import requests
 import os
 from typing import List, Tuple
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
 
 st.set_page_config(page_title="RESONA Chatbot", page_icon="🤖", layout="centered")
 
