@@ -1,34 +1,14 @@
 services:
   - type: web
-    name: resona-backend
+    name: resona
     env: docker
-    dockerfilePath: backend/Dockerfile
-    dockerContext: backend
+    dockerfilePath: Dockerfile
     plan: free
     envVars:
-      # Port will be detected by Render, but we explicitly pass it just in case
-      - key: PORT
-        value: 8000
-      # These keys will be prompted for in the Render dashboard
+      # These keys will be prompted for in the Render dashboard during deployment
       - key: GROQ_API_KEY
         sync: false
       - key: GOOGLE_API_KEY
         sync: false
       - key: TAVILY_API_KEY
         sync: false
-
-  - type: web
-    name: resona-frontend
-    env: docker
-    dockerfilePath: frontend/Dockerfile
-    dockerContext: frontend
-    plan: free
-    envVars:
-      - key: PORT
-        value: 8501
-      # Automatically connect the frontend to the live backend URL
-      - key: BACKEND_URL
-        fromService:
-          type: web
-          name: resona-backend
-          envVarKey: RENDER_EXTERNAL_URL
